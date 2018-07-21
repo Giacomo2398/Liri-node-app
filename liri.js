@@ -81,7 +81,7 @@ function searchTweets(){
     });
     //Parameters for the Account
     let params = {
-        screen_name: 'realDonaldTrump',
+        screen_name: 'nodejs',
         count: 5
     };
     // Twitter Timeline call
@@ -89,12 +89,12 @@ function searchTweets(){
         if (!error){ 
             for (let i = 0; i < tweets.length; i++) {
                 console.log("\n-------------------------");
-                console.log("@realDonaldTrump: " + tweets[i].text + "\n");
+                console.log("@nodejs: " + tweets[i].text + "\n");
                 console.log("\n-------------------------");
             fs.appendFile('./log.txt', "\r\n"  + 
                 "\r\nLast Five Tweets" + 
                 '\r\n-----------------------' + 
-                "\r\n@realDonaldTrump: " + tweets[i].text + 
+                "\r\n@nodejs: " + tweets[i].text + 
                 "\r\n-----------------------", (err) => {
                     if (err) throw err;
                 });
