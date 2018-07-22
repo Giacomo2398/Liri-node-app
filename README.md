@@ -1,24 +1,24 @@
 # Liri
 LIRI is a comand line node app that takes user input as parameters and returns the requested data.
 
-##### Instilling dependencies 
+#### Instilling dependencies 
 `$ npm install`
 
-##### Create a .env file
-Inside place your Spotify and Twitter API keys.
+#### Create .env file
+Inside of the file place your Spotify and Twitter API keys.
 
-##### Starting the App
+#### Starting the App
 To start the application and learn the commands type:
 `$ node liri help`
 
 #### Commands
-First command:
+##### First command:
 `$ node liri my-tweets <twitter_username>` - Retrieves the last 5 tweets from the given twitter username.
-Second Command:
+##### Second Command:
 `$ node liri spotify-this-song <song name>` - Retrieves short information about the given song name.
-Third Command:
+##### Third Command:
 `$ node liri movie-this <movie name>` - Retrieves information about the given movie tittle.
-Fourth Command:
+##### Fourth Command:
 `$ node liri do-what-it-says`- Just run it...
 
 All the commands after the word 'liri' can be replaced with the numbers 1-4.
