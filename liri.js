@@ -25,7 +25,7 @@ function displayIntro(){
     console.log("       ▒█░░░ ▒█░ ▒█▄▄▀ ▒█░")
     console.log("       ▒█▄▄█ ▄█▄ ▒█░▒█ ▄█▄")
     console.log("\n------------Commands------------" + 
-    "\n[1]my-tweets" + 
+    "\n[1]my-tweets" + "'twitter username'" + 
     "\n[2]spotify-this-song" + " 'song name'" +
     "\n[3]movie-this" + " 'movie name'" +
     "\n[4]do-what-it-says" +
@@ -73,6 +73,10 @@ function displayCmds(cmd){
 
 //Function for Twitter
 function searchTweets(){
+    if(promise = " "){
+        promise = "nodejs"
+    }
+
     let client = new Twitter({
         consumer_key: keys.twitter.consumer_key,
         consumer_secret: keys.twitter.consumer_secret,
@@ -81,7 +85,7 @@ function searchTweets(){
     });
     //Parameters for the Account
     let params = {
-        screen_name: 'nodejs',
+        screen_name: promise,
         count: 5
     };
     // Twitter Timeline call
@@ -89,12 +93,12 @@ function searchTweets(){
         if (!error){ 
             for (let i = 0; i < tweets.length; i++) {
                 console.log("\n-------------------------");
-                console.log("@nodejs: " + tweets[i].text + "\n");
+                console.log(promise + ": " + tweets[i].text + "\n");
                 console.log("\n-------------------------");
-            fs.appendFile('./log.txt', "\r\n"  + 
+            fs.appendFile('./log.txt', "\r\n"   + 
                 "\r\nLast Five Tweets" + 
                 '\r\n-----------------------' + 
-                "\r\n@nodejs: " + tweets[i].text + 
+                "\r\n@"+ promise + ": " + tweets[i].text + 
                 "\r\n-----------------------", (err) => {
                     if (err) throw err;
                 });
